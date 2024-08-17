@@ -10,7 +10,6 @@ class Semaphore:
         with self.lock:
             if self.value > 0:
                 self.value -= 1
-                return
 
     def release(self):
         with self.lock:
