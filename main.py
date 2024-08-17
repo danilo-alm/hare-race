@@ -3,6 +3,7 @@ from hare import Hare
 from semaphore import Semaphore
 import time
 import os
+import sys
 
 
 def print_race_state(hares):
@@ -51,6 +52,7 @@ def countdown():
 
     for i in range(3, 0, -1):
         print(i, end='... ')
+        sys.stdout.flush()
         time.sleep(1)
     print('GO!')
 
