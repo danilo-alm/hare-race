@@ -5,6 +5,7 @@ import time
 class Hare:
     def __init__(self, _id):
         self.id = _id
+        self.id_normalized = _id[:20] if len(_id) > 20 else _id.ljust(20)
         self.track_distance = 0
         self.jumps = 0
 
