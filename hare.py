@@ -1,6 +1,6 @@
 import random
 import time
-
+from values import MAX_REST_SECONDS, JUMP_MAX_DISTANCE
 
 class Hare:
     def __init__(self, _id):
@@ -21,5 +21,3 @@ class Hare:
         return seconds
 
 
-MAX_REST_SECONDS = 2
-JUMP_MAX_DISTANCE = 3
