@@ -1,45 +1,44 @@
+# 🐇 Simulação de Corrida de Lebres com Threads e Semáforos
 
-# 🐇 Hare Race Simulation with Threads, Semaphores, and Monitors
+Este projeto simula uma corrida de lebres usando conceitos de programação concorrente, como threads e semáforos. O objetivo é demonstrar a coordenação de múltiplas threads competindo em uma corrida, enquanto o estado da corrida é monitorado e exibido em tempo real.
 
-This project simulates a hare race using concurrent programming concepts such as threads, semaphores, and monitors. The goal is to demonstrate the coordination of multiple threads competing in a race while the race state is monitored and displayed in real-time.
+## 🎯 Objetivo
 
-## 🎯 Objective
+A simulação cria várias threads, cada uma representando uma lebre. Essas threads competem em uma corrida, com seu progresso gerenciado por semáforos e monitorado por meio de uma função dedicada. O projeto mostra como coordenar a execução de threads concorrentes para atingir um objetivo comum.
 
-The simulation creates several threads, each representing a hare. These threads compete in a race, with their progress managed by semaphores and monitored through synchronization conditions. The project showcases how to coordinate the execution of concurrent threads to achieve a common goal.
+## 🛠️ Funcionalidades
 
-## 🛠️ Features
+- **Corrida Multithreaded**: Cada lebre é representada por uma thread que avança na corrida saltando e descansando aleatoriamente.
+- **Semáforos**: Controla o número de lebres que podem saltar simultaneamente.
+- **Sincronização e Consistência**: As threads são sincronizadas para garantir a consistência dos dados e a atualização correta da classificação.
+- **Exibição em Tempo Real**: O progresso da corrida é exibido em tempo real no terminal, mostrando o avanço de cada lebre até a linha de chegada.
 
-- **Multithreaded Race**: Each hare is represented by a thread that advances in the race by jumping and resting randomly.
-- **Semaphores**: Controls the number of hares that can jump simultaneously.
-- **Monitors and Locks**: Synchronizes threads to ensure data consistency and correct ranking updates.
-- **Real-Time Display**: The race progress is displayed in real-time in the terminal, showing each hare's advancement until the finish line.
+## 📁 Estrutura do Código
 
-## 📁 Code Structure
+- **`Semaphore`**: Implementação personalizada de semáforo para controlar o acesso das threads a seções críticas.
+- **`Hare`**: Classe que representa uma lebre na corrida, com métodos para saltar e descansar.
+- **`hare_behaviour`**: Função que define o comportamento de cada lebre durante a corrida, incluindo saltar, descansar e atualizar a classificação.
+- **`monitor_race`**: Função que monitora o estado da corrida, imprimindo o progresso das lebres em intervalos regulares.
+- **`print_race_state`**: Função que exibe visualmente o progresso de cada lebre na corrida, atualizando a tela do terminal.
 
-- **`Semaphore`**: Custom semaphore implementation to control thread access to critical sections.
-- **`Hare`**: Class representing a hare in the race, with methods for jumping and resting.
-- **`hare_behaviour`**: Function that defines each hare's behavior during the race, including jumping, resting, and updating the ranking.
-- **`monitor_race`**: Function that monitors the race's state, printing the hares' progress at regular intervals.
-- **`print_race_state`**: Function that visually displays each hare's progress in the race, updating the terminal screen.
+## 🚀 Como Executar
 
-## 🚀 How to Run
-
-1. Clone the repository:
+1. Clone o repositório:
    ```bash
    git clone https://github.com/danilo-alm/hare-race.git
    cd hare-race
-   ```
 
-2. Ensure you have Python installed on your machine.
 
-3. Run the simulation:
+2. Certifique-se de ter o Python instalado em sua máquina.
+
+3. Execute a simulação:
    ```bash
    python race.py
-   ```
 
-## 📝 Example Output
 
-During execution, the race state will be displayed in real-time in the terminal. Each hare's progress will be shown by a bar of `#` characters, indicating the distance covered:
+## 📝 Exemplo de saída:
+
+Durante a execução, o estado da corrida será exibido em tempo real no terminal. O progresso de cada lebre será mostrado por uma barra de caracteres #, indicando a distância percorrida:
 
 ```
 Speedy               - ######    |
@@ -47,6 +46,6 @@ Hopper               - ####      |
 Dash                 - ########  |
 ```
 
-## 🔧 Configuration
+## 🔧 Configuração
 
-You can adjust some race parameters, such as the total distance (`RACE_DISTANCE`), maximum jump distance (`JUMP_MAX_DISTANCE`), and maximum rest time (`MAX_REST_SECONDS`) in the `values.py` file.
+Você pode ajustar alguns parâmetros da corrida, como a distância total (RACE_DISTANCE), a distância máxima de salto (JUMP_MAX_DISTANCE) e o tempo máximo de descanso (MAX_REST_SECONDS) no arquivo values.py.
